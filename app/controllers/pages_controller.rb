@@ -1,9 +1,12 @@
 class PagesController < Garnet::Controller
+  attr_reader :data
+
   def about
     render :about, name: "Darth", last_name: "Vader"
   end
 
   def info
-    render :info, data: params["data"]
+    @data = params["data"]
+    #render :info, data: params["data"]
   end
 end
