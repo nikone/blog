@@ -1,5 +1,5 @@
-class PagesController
+class PagesController < Garnet::Controller
   def about
-    "About me"
+    render :about, name: "Darth", last_name: "Vader"
   end
 end
