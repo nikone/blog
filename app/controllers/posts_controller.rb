@@ -6,8 +6,8 @@ class PostsController < Garnet::Controller
   def create
     post_params = params["post"]
     @post = Post.new
-    @post.title = post_params["title"]
-    @post.body = post_params["body"]
+    @post.header = post_params["header"]
+    @post.content = post_params["content"]
     @post.created_at = Time.now
 
     PostMapper.new.save(@post)
@@ -23,8 +23,8 @@ class PostsController < Garnet::Controller
 
   def update
     @post = PostMapper.find(params["id"])
-    @post.title = params["post"]["title"]
-    @post.body = params["post"]["body"]
+    @post.header = params["post"]["header"]
+    @post.content = params["post"]["content"]
     PostMapper.new.save(@post)
   end
 

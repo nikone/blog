@@ -13,9 +13,9 @@ class PostMapper
 
   def save(post)
     if post.id
-      @@db.execute("UPDATE posts SET header = ?, content = ?, created_at = ? WHERE id = ?", [post.title, post.body, post.created_at, post.id])
+      @@db.execute("UPDATE posts SET header = ?, content = ?, created_at = ? WHERE id = ?", [post.header, post.content, post.created_at, post.id])
     else
-      @@db.execute "INSERT INTO posts (header, content, created_at) VALUES (?,?,?)", [post.title, post.body, post.created_at.to_s]
+      @@db.execute "INSERT INTO posts (header, content, created_at) VALUES (?,?,?)", [post.header, post.content, post.created_at.to_s]
     end
   end
 
