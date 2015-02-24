@@ -10,9 +10,11 @@ GEM
   specs:
     erubis (2.7.0)
     rack (1.6.0)
+    sqlite3 (1.3.10)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   garnet!
+  sqlite3
